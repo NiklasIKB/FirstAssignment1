@@ -15,7 +15,7 @@ public class TestClass {
         counter.addRow("tjena");
 
         int actual = counter.getRowCount();
-        int expected = 2;
+        int expected = 1;
 
         assertEquals(expected, actual);
     }
@@ -44,6 +44,20 @@ public class TestClass {
         counter.addRow("stop");
         int actual = counter.getRowCount();
         int expected = 2;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testTrimSpaces() { //testar om mellanslagen trimmas bort
+
+        TextCounter counter = new TextCounter();
+
+        counter.addRow("mellanslag ");
+        counter.addRow(" slagmellan");
+
+        int actual = counter.getCharCount();
+        int expected = 20;
 
         assertEquals(expected, actual);
     }
