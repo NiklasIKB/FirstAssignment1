@@ -9,15 +9,10 @@ public class TextAnalyzer {
         TextCounter newCounter = new TextCounter();
         Scanner scan = new Scanner(System.in);
 
-        String text = scan.nextLine();
 
         while (!newCounter.isItTimeToStop()) {
-
+           String text = scan.nextLine();
             newCounter.addRow(text);
-
-            if (!newCounter.isItTimeToStop()) {
-                text = scan.nextLine();
-            }
 
         }
 
